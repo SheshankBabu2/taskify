@@ -1,0 +1,64 @@
+package tasker;
+
+import java.util.ArrayList;
+
+public class TaskManager {
+	private ArrayList<Task> tasks;
+	
+	//Constructor
+	public TaskManager() {
+		tasks = new ArrayList<>();
+	}
+	
+	//Add a new  task
+	public void addTask(Task task) {
+		tasks.add(task);
+		System.out.println("Task added successfully");
+	}
+	
+	//View all tasks
+	public void viewTasks() {
+		if(tasks.isEmpty()) {
+			System.out.println("No tasks available.");
+		}
+		else {
+			for(Task task:tasks) {
+				System.out.println(task);
+				System.out.println("----------------------");
+			}
+		}
+	}
+	
+	//Delete a task by title
+	public void deleteTask(String title) {
+		boolean found =  false;
+		for(Task  task: tasks) {
+			if(task.getTitle().equalsIgnoreCase(title)) {
+				tasks.remove(task);
+				System.out.println("Task  deleted successfully!");
+				found = true;
+				break;
+			}
+		}
+		if(!found) {
+			System.out.println("Task  not  found!");
+		}
+	}
+	
+	//searching a task by title
+	public void searchTask(String title) {
+		boolean found = false;
+		for(Task task:tasks) {
+			if(task.getTitle().equalsIgnoreCase(title)) {
+				System.out.println("Task found: ");
+				System.out.println(task);
+				found = true;
+				break;
+			}
+		}
+		if(!found) {
+			System.out.println("Task not found!");
+		}
+	}
+
+}

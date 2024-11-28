@@ -5,24 +5,17 @@ public class Main {
     public static void main(String[] args) {
     	Scanner  k =  new Scanner(System.in);
     	TaskManager taskManager = new  TaskManager();
-    	taskManager.loadFromFile("tasks.txt");
     	
     	while(true) {
-    		System.out.println("\nTaskify Menu:");
+    		System.out.println("Taskify Menu:");
     		System.out.println("1. Add Task");
     		System.out.println("2. View Tasks");
     		System.out.println("3. Delete Task");
-    		System.out.println("4. Search Task: ");
-    		System.out.println("5. Sort Tasks by Priority");
-    		System.out.println("6. Sort Tasks by Deadline");
-    		System.out.println("7. Save Tasks");
-    		System.out.println("8. Exit");
-
+            System.out.println("4. Exit");
             System.out.print("Enter your choice: ");
             
             int choice = k.nextInt();
             k.nextLine();  // Consume newline
-            System.out.println();
             
             switch (choice) {
             case 1:
@@ -52,35 +45,11 @@ public class Main {
             	String deleteTitle = k.nextLine();
             	taskManager.deleteTask(deleteTitle);
             	break;
-            
-            case 4:
-            	System.out.print("Enter the title of the task to search: ");
-            	String searchTitle  = k.nextLine();
-            	taskManager.searchTask(searchTitle);
-            	break;
             	
-            case 5:
-                taskManager.sortByPriority();
-                taskManager.viewTasks();
-                break;
-
-            case 6:
-                taskManager.sortByDeadline();
-                taskManager.viewTasks();
-                break;
-                
-            case 7:
-                taskManager.saveToFile("tasks.txt");
-                break;
-
-
-            case 8:
-                taskManager.saveToFile("tasks.txt");
-                System.out.println("Exiting Taskify. Goodbye!");
-                k.close();
-                return;
-
-
+            case 4: 
+            	System.out.println("Existing Taskify.Goodbye!");
+            	k.close();
+            	return;
             	
             default:
             	System.out.println("Invalid choice. Please try agian!");

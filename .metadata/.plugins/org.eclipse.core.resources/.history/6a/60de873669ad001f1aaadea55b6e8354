@@ -1,0 +1,8 @@
+package tasker;
+
+public class Main {
+    public static void main(String[] args) {
+        Task task = new Task("Finish Homework", "Complete math exercises",1,"2024-12-01");
+    	System.out.println(task);
+    }
+}

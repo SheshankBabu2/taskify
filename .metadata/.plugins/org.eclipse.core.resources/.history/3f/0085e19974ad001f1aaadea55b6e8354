@@ -8,7 +8,7 @@ public class Main {
     	taskManager.loadFromFile("tasks.txt");
     	
     	while(true) {
-    		System.out.println("\nTaskify Menu:");
+    		System.out.println("Taskify Menu:");
     		System.out.println("1. Add Task");
     		System.out.println("2. View Tasks");
     		System.out.println("3. Delete Task");
@@ -18,11 +18,10 @@ public class Main {
     		System.out.println("7. Save Tasks");
     		System.out.println("8. Exit");
 
-            System.out.print("Enter your choice: ");
+            System.out.print("Enter your choice: \n");
             
             int choice = k.nextInt();
             k.nextLine();  // Consume newline
-            System.out.println();
             
             switch (choice) {
             case 1:
